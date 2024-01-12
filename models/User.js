@@ -11,6 +11,17 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true,
         trim: true
+    }, 
+
+    about: {
+        type: String,
+        required: true,
+        trim: true
+    },
+
+    profilePic: {
+        type: String,
+        required: true
     }
 
 }, {timestamps: true})
