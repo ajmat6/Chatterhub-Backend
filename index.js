@@ -14,12 +14,17 @@ mongoose.connect(process.env.DATABASE_URL)
 
 // routes imports:
 const authRoutes = require('./routes/authRouter');
+const messageRoutes = require('./routes/messageRoutes');
+
 app.use(express.json());
 app.use(cors());
 
 // routes use:
 app.use('/api/auth', authRoutes);
+app.use('/api/messages', messageRoutes)
 
 app.listen(process.env.PORT, () => {
     console.log(`Server is running on port ${process.env.PORT}`)
 })
+
+global.onlineUsers = new Map();

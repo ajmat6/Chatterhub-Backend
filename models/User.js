@@ -22,7 +22,27 @@ const UserSchema = new mongoose.Schema({
     profilePic: {
         type: String,
         required: true
-    }
+    },
+
+    sentMessages: [
+        {
+            userWiseMessages: {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'Message',
+                required: true
+            }
+        }
+    ],
+
+    recievedMessages: [
+        {
+            userWiseMessages: {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'Message',
+                required: true
+            }
+        }
+    ]
 
 }, {timestamps: true})
 
