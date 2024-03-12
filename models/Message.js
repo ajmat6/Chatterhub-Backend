@@ -33,6 +33,11 @@ const messageSchema = new mongoose.Schema({
     messageStatus: {
         type: String,
         default: 'sent'
+    },
+
+    type: {
+        type: String,
+        default: 'text',
     }
 }, {timestamps: true})
 
